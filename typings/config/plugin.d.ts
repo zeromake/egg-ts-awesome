@@ -6,12 +6,11 @@ import 'egg-onerror';
 import 'egg-session';
 import 'egg-watcher';
 import 'egg-multipart';
-import 'egg-security';
 import 'egg-development';
 import 'egg-static';
 import 'egg-view';
 import 'egg-router-plus';
-import 'egg-sequelize';
+import '@forsigner/egg-typeorm';
 import { EggPluginItem } from 'egg';
 declare module 'egg' {
   interface EggPlugin {
@@ -28,6 +27,6 @@ declare module 'egg' {
     jsonp?: EggPluginItem;
     view?: EggPluginItem;
     routerPlus?: EggPluginItem;
-    sequelize?: EggPluginItem;
+    typeorm?: EggPluginItem;
   }
 }

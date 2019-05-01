@@ -9,14 +9,49 @@ export default (appInfo: EggAppInfo) => {
 
     // add your egg config in here
     config.middleware = [];
-    config.sequelize = {
-        dialect: 'mysql',
-        database: 'batch-sms',
+    config.typeorm = {
+        type: 'mysql',
         host: 'localhost',
         port: 3306,
-        username: 'root',
-        password: '',
+        username: 'test',
+        password: 'test',
+        database: 'test',
+        synchronize: false,
+        logging: false,
+        entities: [ 'app/entity/**/*.ts' ],
+        migrations: [ 'database/migrations/**/*.ts' ],
+        subscribers: [ 'database/subscriber/**/*.ts' ],
     };
+    // config.knex = {
+    //     client: {
+    //         // database dialect
+    //         dialect: 'mysql',
+    //         connection: {
+    //             // host
+    //             host: 'localhost',
+    //             // port
+    //             port: '3306',
+    //             // username
+    //             user: '',
+    //             // password
+    //             password: '',
+    //             // database
+    //             database: '',
+    //         },
+    //         // connection pool
+    //         pool: { min: 0, max: 5 },
+    //         // acquire connection timeout, millisecond
+    //         acquireConnectionTimeout: 30000,
+
+    //         migrations: {
+    //             tableName: '_migrations',
+    //             directory: 'database/migrations',
+    //         },
+    //         seeds: {
+    //             directory: 'database/seeds',
+    //         },
+    //     },
+    // };
 
     // add your special config in here
     const bizConfig = {

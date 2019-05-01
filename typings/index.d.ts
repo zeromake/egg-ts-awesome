@@ -1,6 +1,6 @@
 import 'egg';
 import 'egg-router-plus';
-import 'egg-sequelize';
+import '@forsigner/egg-typeorm';
 
 declare module 'egg' {
 }

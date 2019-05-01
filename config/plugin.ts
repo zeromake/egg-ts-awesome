@@ -11,10 +11,11 @@ const plugin: EggPlugin = {
     schedule: false,
     i18n: false,
     static: true,
-    sequelize: {
+    typeorm: {
         enable: true,
-        package: 'egg-sequelize',
+        package: '@forsigner/egg-typeorm',
     },
+    security: false,
     // static: true,
     // nunjucks: {
     //   enable: true,
