@@ -23,4 +23,12 @@ describe('test/app/controller/home.test.ts', () => {
             .expect(200);
         assert(result.text === 'hi, egg api');
     });
+
+    it('admin login', async () => {
+        const result = await app
+            .httpRequest()
+            .post('/admin/login')
+            .expect(401);
+        assert(result.text === 'Unauthorized');
+    });
 });
