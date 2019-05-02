@@ -1,20 +1,18 @@
-import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
-
-@Entity()
-class User {
-    @PrimaryGeneratedColumn()
-    public id: number;
-
+import { Entity, Column } from 'typeorm';
+import { BaseColumn } from '../lib/column-schema';
+@Entity({
+    name: 'user',
+})
+export default class User extends BaseColumn {
     @Column()
-    public name: string;
+    public username: string;
 
     @Column()
     public password: string;
 
     @Column()
-    public readonly created_at: Date;
+    public last_at: Date;
 
     @Column()
-    public readonly updated_at: Date;
+    public ip: string;
 }
-export default User;

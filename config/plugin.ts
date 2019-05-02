@@ -16,6 +16,7 @@ const plugin: EggPlugin = {
         package: '@forsigner/egg-typeorm',
     },
     security: false,
+    session: true,
     // static: true,
     // nunjucks: {
     //   enable: true,

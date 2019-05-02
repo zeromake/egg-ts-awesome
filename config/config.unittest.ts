@@ -13,9 +13,9 @@ export default (appInfo: EggAppInfo) => {
         database: 'batch-sms',
         synchronize: false,
         logging: false,
-        entities: [ 'app/entity/**/*.ts' ],
-        migrations: [ 'database/migrations/**/*.ts' ],
-        subscribers: [ 'database/subscriber/**/*.ts' ],
+        entities: ['app/entity/**/*.ts'],
+        migrations: ['database/migrations/**/*.ts'],
+        subscribers: ['database/subscriber/**/*.ts'],
     };
 
     // config.knex = {
