@@ -11,6 +11,9 @@ import 'egg-static';
 import 'egg-view';
 import 'egg-router-plus';
 import '@forsigner/egg-typeorm';
+import 'egg-passport';
+import 'egg-redis';
+import 'egg-session-redis';
 import { EggPluginItem } from 'egg';
 declare module 'egg' {
   interface EggPlugin {
@@ -28,5 +31,8 @@ declare module 'egg' {
     view?: EggPluginItem;
     routerPlus?: EggPluginItem;
     typeorm?: EggPluginItem;
+    passport?: EggPluginItem;
+    redis?: EggPluginItem;
+    sessionRedis?: EggPluginItem;
   }
 }

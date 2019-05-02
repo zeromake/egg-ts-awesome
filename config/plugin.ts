@@ -17,6 +17,18 @@ const plugin: EggPlugin = {
     },
     security: false,
     session: true,
+    passport: {
+        enable: true,
+        package: 'egg-passport',
+    },
+    redis: {
+        enable: true,
+        package: 'egg-redis',
+    },
+    sessionRedis: {
+        enable: true,
+        package: 'egg-session-redis',
+    },
     // static: true,
     // nunjucks: {
     //   enable: true,

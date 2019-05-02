@@ -2,19 +2,17 @@
 // Do not modify this file!!!!!!!!!
 
 import 'egg';
-import ExportAdminHome from '../../../app/controller/admin/home';
-import ExportAdminUser from '../../../app/controller/admin/user';
 import ExportApiHome from '../../../app/controller/api/home';
+import ExportApiSession from '../../../app/controller/api/session';
+import ExportApiUser from '../../../app/controller/api/user';
 import ExportWwwHome from '../../../app/controller/www/home';
 
 declare module 'egg' {
   interface IController {
-    admin: {
-      home: ExportAdminHome;
-      user: ExportAdminUser;
-    }
     api: {
       home: ExportApiHome;
+      session: ExportApiSession;
+      user: ExportApiUser;
     }
     www: {
       home: ExportWwwHome;

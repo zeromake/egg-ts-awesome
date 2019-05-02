@@ -13,11 +13,29 @@ export default (appInfo: EggAppInfo) => {
         database: 'batch-sms',
         synchronize: false,
         logging: false,
-        entities: ['app/entity/**/*.ts'],
-        migrations: ['database/migrations/**/*.ts'],
-        subscribers: ['database/subscriber/**/*.ts'],
+        entities: [
+            'app/entity/**/*.ts',
+        ],
+        migrations: [
+            'database/migrations/**/*.ts',
+        ],
+        subscribers: [
+            'database/subscriber/**/*.ts',
+        ],
     };
 
+    config.redis = {
+        client: {
+            host: '127.0.0.1',
+            port: 6381,
+            password: '',
+            db: 0,
+        },
+        agent: true,
+    };
+    config.sessionRedis = {
+        name: null,
+    } as any;
     // config.knex = {
     //     client: {
     //         // database dialect
