@@ -4,6 +4,18 @@ import { Strategy } from 'passport-local';
 export default function(app: Application) {
     // const UserModel = getRepository(User);
     // 挂载 strategy
+    app.passport.use('api', new Strategy({
+        passReqToCallback: true,
+    }, (req, username, password, done) => {
+        const user = {
+            provider: 'api',
+            username,
+            password,
+        };
+        // 这里不处理应用层逻辑，传给 app.passport.verify 统一处理
+        app.passport.doVerify(req, user, done);
+    }));
+
     app.passport.use('admin', new Strategy({
         passReqToCallback: true,
     }, (req, username, password, done) => {
@@ -15,10 +27,20 @@ export default function(app: Application) {
         // 这里不处理应用层逻辑，传给 app.passport.verify 统一处理
         app.passport.doVerify(req, user, done);
     }));
+
     app.passport.verify(async (ctx: Context, user?: any) => {
-        if (user.provider === 'admin') {
+        if (user.provider === 'api') {
             const User = ctx.repo.User;
             const userObj = await User.findOne({
+                username: user.username,
+            });
+            if (userObj && userObj.password === user.password) {
+                delete userObj.password;
+                return userObj;
+            }
+        } else if (user.provider === 'admin') {
+            const Manager = ctx.repo.Manager;
+            const userObj = await Manager.findOne({
                 username: user.username,
             });
             if (userObj && userObj.password === user.password) {

@@ -28,37 +28,7 @@ export default (appInfo: EggAppInfo) => {
         agent: true,
     };
     config.sessionRedis = {
-        name: null,
-    } as any;
-    // config.knex = {
-    //     client: {
-    //         // database dialect
-    //         dialect: 'mysql',
-    //         connection: {
-    //           // host
-    //           host: 'localhost',
-    //           // port
-    //           port: 3309,
-    //           // username
-    //           user: 'batch-sms',
-    //           // password
-    //           password: 'batch-sms',
-    //           // database
-    //           database: 'batch-sms',
-    //         },
-    //         // connection pool
-    //         pool: { min: 0, max: 5 },
-    //         // acquire connection timeout, millisecond
-    //         acquireConnectionTimeout: 30000,
-
-    //         migrations: {
-    //             tableName: '_migrations',
-    //             directory: 'database/migrations',
-    //         },
-    //         seeds: {
-    //             directory: 'database/seeds',
-    //         },
-    //     },
-    // };
+        name: undefined,
+    };
     return config;
 };

@@ -32,40 +32,8 @@ export default (appInfo: EggAppInfo) => {
         },
     };
     config.sessionRedis = {
-        name: null,
-    } as any;
-    // config.knex = {
-    //     client: {
-    //         // database dialect
-    //         dialect: 'mysql',
-    //         connection: {
-    //             // host
-    //             host: 'localhost',
-    //             // port
-    //             port: '3306',
-    //             // username
-    //             user: '',
-    //             // password
-    //             password: '',
-    //             // database
-    //             database: '',
-    //         },
-    //         // connection pool
-    //         pool: { min: 0, max: 5 },
-    //         // acquire connection timeout, millisecond
-    //         acquireConnectionTimeout: 30000,
-
-    //         migrations: {
-    //             tableName: '_migrations',
-    //             directory: 'database/migrations',
-    //         },
-    //         seeds: {
-    //             directory: 'database/seeds',
-    //         },
-    //     },
-    // };
-
-    // add your special config in here
+        name: undefined,
+    };
     const bizConfig = {
         sourceUrl: `https://github.com/eggjs/examples/tree/master/${
             appInfo.name

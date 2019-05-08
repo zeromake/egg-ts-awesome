@@ -1,6 +1,7 @@
 {
   "extends": ["tslint-config-egg"],
   "rules": {
-    "quotemark": false
+    "quotemark": false,
+    "array-bracket-spacing": false
   }
 }

@@ -4,12 +4,12 @@ export default function(app: Application) {
     const { router: rootRouter, controller } = app;
     const router = rootRouter.namespace(
         "/api",
-        app.passport.authorized("admin"),
+        app.passport.authorized("api"),
     );
 
     rootRouter.post(
         "/api/session",
-        app.passport.authenticate("admin", {
+        app.passport.authenticate("api", {
             successRedirect: null,
             successReturnToOrRedirect: null,
             failWithError: true,
