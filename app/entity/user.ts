@@ -1,7 +1,7 @@
-import { Entity, Column } from 'typeorm';
-import { BaseColumn } from '../lib/column-schema';
+import { Entity, Column } from "typeorm";
+import { BaseColumn } from "../lib/column-schema";
 @Entity({
-    name: 'user',
+    name: "user",
 })
 export default class User extends BaseColumn {
     @Column()

@@ -1,34 +1,34 @@
-import * as assert from 'assert';
-import { app } from 'egg-mock/bootstrap';
+import * as assert from "assert";
+import { app } from "egg-mock/bootstrap";
 
-describe('test/app/controller/home.test.ts', () => {
-    it('should GET /', async () => {
+describe("test/app/controller/home.test.ts", () => {
+    it("should GET /", async () => {
         const result = await app
             .httpRequest()
-            .get('/')
+            .get("/")
             .expect(200);
-        assert(result.text === 'hi, egg www');
+        assert(result.text === "hi, egg www");
     });
-    it('should GET admin /', async () => {
+    it("should GET admin /", async () => {
         const result = await app
             .httpRequest()
-            .get('/admin')
+            .get("/admin")
             .expect(200);
-        assert(result.text === 'hi, egg admin');
+        assert(result.text === "hi, egg admin");
     });
-    it('should GET api /', async () => {
+    it("should GET api /", async () => {
         const result = await app
             .httpRequest()
-            .get('/api')
+            .get("/api")
             .expect(200);
-        assert(result.text === 'hi, egg api');
+        assert(result.text === "hi, egg api");
     });
 
-    it('admin login', async () => {
+    it("admin login", async () => {
         const result = await app
             .httpRequest()
-            .post('/admin/login')
+            .post("/admin/login")
             .expect(401);
-        assert(result.text === 'Unauthorized');
+        assert(result.text === "Unauthorized");
     });
 });

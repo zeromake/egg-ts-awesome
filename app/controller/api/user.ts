@@ -1,7 +1,6 @@
-import { Controller, Context } from 'egg';
+import { Controller, Context } from "egg";
 
 export default class User extends Controller {
-
     public async create(ctx: Context) {
         // const ctx = this.ctx;
         const body = ctx.request.body;
@@ -45,12 +44,12 @@ export default class User extends Controller {
         const User = ctx.repo.User;
         const qb = User.createQueryBuilder();
         if (query.id) {
-            qb.where('id = :id', {
+            qb.where("id = :id", {
                 id: query.id,
             });
         }
         if (query.username) {
-            qb.where('username = :username', {
+            qb.where("username = :username", {
                 username: query.username,
             });
         }
@@ -65,17 +64,20 @@ export default class User extends Controller {
         }
         if (query.sort) {
             const sort = query.sort;
-            const arr = sort.split('-');
-            const order = arr[1] || 'ASC';
+            const arr = sort.split("-");
+            const order = arr[1] || "ASC";
             qb.orderBy(arr[0], order.toLocaleUpperCase());
         }
         // const count = await qb.getCount();
-        const [ users, total ] = await qb.getManyAndCount();
-        ctx.set('X-Pagination', JSON.stringify({
-            page_num: pageNum,
-            page_size: pageSize,
-            total,
-        }));
+        const [users, total] = await qb.getManyAndCount();
+        ctx.set(
+            "X-Pagination",
+            JSON.stringify({
+                page_num: pageNum,
+                page_size: pageSize,
+                total,
+            }),
+        );
         ctx.body = users;
     }
 }

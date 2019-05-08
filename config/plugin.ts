@@ -1,9 +1,9 @@
-import { EggPlugin } from 'egg';
+import { EggPlugin } from "egg";
 
 const plugin: EggPlugin = {
     routerPlus: {
         enable: true,
-        package: 'egg-router-plus',
+        package: "egg-router-plus",
     },
     jsonp: false,
     // 日志切割 require schedule
@@ -13,21 +13,21 @@ const plugin: EggPlugin = {
     static: true,
     typeorm: {
         enable: true,
-        package: '@forsigner/egg-typeorm',
+        package: "@forsigner/egg-typeorm",
     },
     security: false,
     session: true,
     passport: {
         enable: true,
-        package: 'egg-passport',
+        package: "egg-passport",
     },
     redis: {
         enable: true,
-        package: 'egg-redis',
+        package: "egg-redis",
     },
     sessionRedis: {
         enable: true,
-        package: 'egg-session-redis',
+        package: "egg-session-redis",
     },
     // static: true,
     // nunjucks: {

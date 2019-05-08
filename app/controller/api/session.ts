@@ -1,7 +1,6 @@
-import { Controller, Context } from 'egg';
+import { Controller, Context } from "egg";
 
 export default class Session extends Controller {
-
     public async login(ctx: Context) {
         const User = ctx.repo.User;
         const ctxUser = ctx.user;
@@ -10,13 +9,13 @@ export default class Session extends Controller {
             ip: this.ctx.ip,
             last_at: new Date(),
         };
-        ctx.body = { ...ctxUser, ...await User.save(user) };
+        ctx.body = { ...ctxUser, ...(await User.save(user)) };
     }
 
     public async logout(ctx: Context) {
         ctx.logout();
         ctx.body = {
-            message: 'login ok',
+            message: "login ok",
         };
     }
     public async userinfo(ctx: Context) {
