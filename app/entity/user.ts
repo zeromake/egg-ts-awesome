@@ -1,18 +1,28 @@
 import { Entity, Column } from "typeorm";
 import { BaseColumn } from "../lib/column-schema";
 @Entity({
-    name: "user",
+    name: "users",
 })
 export default class User extends BaseColumn {
+    /**
+     * @description 用户名
+     */
     @Column()
     public username: string;
 
-    @Column()
+    /**
+     * @description 密码
+     */
+    @Column({
+        select: false,
+    })
     public password: string;
 
-    @Column()
-    public last_at: Date;
-
-    @Column()
-    public ip: string;
+    /**
+     * @description 最后登录ip
+     */
+    @Column({
+        length: 40,
+    })
+    public last_ip: string;
 }

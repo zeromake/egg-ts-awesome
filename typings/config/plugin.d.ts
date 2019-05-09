@@ -10,7 +10,7 @@ import 'egg-development';
 import 'egg-static';
 import 'egg-view';
 import 'egg-router-plus';
-import '@forsigner/egg-typeorm';
+import '@zeromake/egg-typeorm';
 import 'egg-passport';
 import 'egg-redis';
 import 'egg-session-redis';

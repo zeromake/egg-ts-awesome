@@ -1,12 +1,16 @@
 import { Entity, Column } from "typeorm";
 import { BaseColumn } from "../lib/column-schema";
 
-@Entity()
+@Entity({
+    name: "managers",
+})
 export default class Manager extends BaseColumn {
     @Column()
     public username: string;
 
-    @Column()
+    @Column({
+        select: false,
+    })
     public password: string;
 
     @Column({

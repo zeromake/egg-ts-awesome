@@ -13,7 +13,7 @@ const plugin: EggPlugin = {
     static: true,
     typeorm: {
         enable: true,
-        package: "@forsigner/egg-typeorm",
+        package: "@zeromake/egg-typeorm",
     },
     security: false,
     session: true,

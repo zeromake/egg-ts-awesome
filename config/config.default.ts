@@ -10,17 +10,23 @@ export default (appInfo: EggAppInfo) => {
     // add your egg config in here
     config.middleware = [];
     config.typeorm = {
-        type: "mysql",
-        host: "localhost",
-        port: 3306,
-        username: "test",
-        password: "test",
-        database: "test",
-        synchronize: false,
-        logging: false,
-        entities: ["app/entity/**/*.ts"],
-        migrations: ["database/migrations/**/*.ts"],
-        subscribers: ["database/subscriber/**/*.ts"],
+        connection: {
+            type: "mysql",
+            host: "localhost",
+            port: 3306,
+            username: "test",
+            password: "test",
+            database: "test",
+            synchronize: false,
+            logging: false,
+            entities: ["app/entity/**/*.ts"],
+            migrations: ["database/migrations/**/*.ts"],
+            cli: {
+                entitiesDir: "app/entity",
+                migrationsDir: "database/migrations",
+            },
+        },
+        watch: false,
     };
 
     config.redis = {

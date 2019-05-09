@@ -5,17 +5,24 @@ export default (appInfo: EggAppInfo) => {
     config.keys = appInfo.name + "_1556673982809_1095";
 
     config.typeorm = {
-        type: "mysql",
-        host: "localhost",
-        port: 3309,
-        username: "batch-sms",
-        password: "batch-sms",
-        database: "batch-sms",
-        synchronize: false,
-        logging: false,
-        entities: ["app/entity/**/*.ts"],
-        migrations: ["database/migrations/**/*.ts"],
-        subscribers: ["database/subscriber/**/*.ts"],
+        connection: {
+            type: "mysql",
+            host: "localhost",
+            port: 3309,
+            username: "batch-sms",
+            password: "batch-sms",
+            database: "batch-sms",
+            synchronize: false,
+            logging: false,
+            entities: ["app/entity/**/*.ts"],
+            migrations: ["database/migrations/**/*.ts"],
+
+            cli: {
+                entitiesDir: "app/entity",
+                migrationsDir: "database/migrations",
+            },
+        },
+        watch: false,
     };
 
     config.redis = {

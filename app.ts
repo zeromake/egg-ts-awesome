@@ -2,7 +2,6 @@ import { Application, Context } from 'egg';
 import { Strategy } from 'passport-local';
 
 export default function(app: Application) {
-    // const UserModel = getRepository(User);
     // 挂载 strategy
     app.passport.use('api', new Strategy({
         passReqToCallback: true,
@@ -29,43 +28,43 @@ export default function(app: Application) {
     }));
 
     app.passport.verify(async (ctx: Context, user?: any) => {
-        if (user.provider === 'api') {
+        const provider = user.provider;
+        let userObj: any = null;
+        if (provider === 'api') {
             const User = ctx.repo.User;
-            const userObj = await User.findOne({
+            userObj = await User.findOne({
                 username: user.username,
             });
-            if (userObj && userObj.password === user.password) {
-                delete userObj.password;
-                return userObj;
+            if (!userObj || userObj.password !== user.password) {
+                userObj = null;
             }
-        } else if (user.provider === 'admin') {
+        } else if (provider === 'admin') {
             const Manager = ctx.repo.Manager;
-            const userObj = await Manager.findOne({
+            userObj = await Manager.findOne({
                 username: user.username,
             });
-            if (userObj && userObj.password === user.password) {
-                delete userObj.password;
-                return userObj;
+            if (!userObj || userObj.password !== user.password) {
+                userObj = null;
             }
         }
-        return null;
+        if (userObj) {
+            delete userObj.password;
+            userObj.provider = provider;
+        }
+        return userObj;
     });
-    app.passport.authorized = function authorized(_?: string) {
-        return async function authorized(ctx: Context, next) {
-            // console.log(arguments);
-            // const ctx: Context = this.ctx;
+    app.passport.authorized = function _authorized(provider: string) {
+        return async function authorized(ctx: Context, next: () => Promise<void>): Promise<void> {
             if (!ctx.isAuthenticated()) {
                 ctx.status = 401;
                 ctx.message = 'User not authenticated';
                 return;
             }
-            // const user = ctx.user;
-            // console.log(user);
-            // if (!(user && user.provider === name)) {
-            //     ctx.status = 401;
-            //     ctx.message = 'User is not provider';
-            //     return;
-            // }
+            if (ctx.user.provider !== provider) {
+                ctx.status = 403;
+                ctx.message = `User[${ctx.user.provider}] no permission access \`${provider}\``;
+                return;
+            }
             return next();
         };
     };
