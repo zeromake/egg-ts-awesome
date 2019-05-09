@@ -8,7 +8,8 @@ declare module 'egg' {
             use(provider: string, strategy: any): void;
             doVerify(req: any, user: any, done: any): void;
             verify(fn: (ctx: Context, user?: any) => Promise<void> ): void;
-            authorized(provider: string): (ctx: Context, next: () => Promise<void>) => Promise<void>
+            authorized(provider: string): (ctx: Context, next: () => Promise<void>) => Promise<void>;
+            authenticate: any;
         };
     }
     interface Context {

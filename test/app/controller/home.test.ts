@@ -9,26 +9,11 @@ describe("test/app/controller/home.test.ts", () => {
             .expect(200);
         assert(result.text === "hi, egg www");
     });
-    it("should GET admin /", async () => {
-        const result = await app
-            .httpRequest()
-            .get("/admin")
-            .expect(200);
-        assert(result.text === "hi, egg admin");
-    });
     it("should GET api /", async () => {
         const result = await app
             .httpRequest()
             .get("/api")
-            .expect(200);
-        assert(result.text === "hi, egg api");
-    });
-
-    it("admin login", async () => {
-        const result = await app
-            .httpRequest()
-            .post("/admin/login")
             .expect(401);
-        assert(result.text === "Unauthorized");
+        assert(result.text === "User not authenticated");
     });
 });

@@ -58,7 +58,7 @@ export default class User extends Controller {
         if (pageSize > 200) {
             pageSize = 200;
         }
-        qb.limit(pageSize);
+        qb.take(pageSize);
         if (pageNum > 1) {
             qb.skip(pageSize * (pageNum - 1));
         }

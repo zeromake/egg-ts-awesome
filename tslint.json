@@ -2,6 +2,7 @@
   "extends": ["tslint-config-egg"],
   "rules": {
     "quotemark": false,
-    "array-bracket-spacing": false
+    "array-bracket-spacing": false,
+    "class-name": false
   }
 }

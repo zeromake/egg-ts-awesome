@@ -32,20 +32,23 @@ export default function(app: Application) {
         let userObj: any = null;
         if (provider === 'api') {
             const User = ctx.repo.User;
-            userObj = await User.findOne({
+            userObj = await User.createQueryBuilder()
+            .where('username = :username', {
                 username: user.username,
-            });
-            if (!userObj || userObj.password !== user.password) {
-                userObj = null;
-            }
+            })
+            .addSelect('password')
+            .getOne();
         } else if (provider === 'admin') {
             const Manager = ctx.repo.Manager;
-            userObj = await Manager.findOne({
+            userObj = await Manager.createQueryBuilder()
+            .where('username = :username', {
                 username: user.username,
-            });
-            if (!userObj || userObj.password !== user.password) {
-                userObj = null;
-            }
+            })
+            .addSelect('password')
+            .getOne();
+        }
+        if (!userObj || userObj.password !== user.password) {
+            userObj = null;
         }
         if (userObj) {
             delete userObj.password;
@@ -68,6 +71,7 @@ export default function(app: Application) {
             return next();
         };
     };
+    // app.context.
     // app.passport.serializeUser(async (_, user) => {
     //     console.log('s', user);
     // });
