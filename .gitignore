@@ -20,3 +20,4 @@ config/**/*.map
 config/**/*.local.ts
 config/**/*.prod.ts
 *.log
+*.db

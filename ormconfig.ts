@@ -11,6 +11,6 @@ const configMap = {
 };
 const config = configMap[env]({});
 
-module.exports = {
+export default {
     ...config.typeorm.connection,
 };

@@ -6,14 +6,10 @@ export default (appInfo: EggAppInfo) => {
 
     config.typeorm = {
         connection: {
-            type: "mysql",
-            host: "localhost",
-            port: 3309,
-            username: "batch-sms",
-            password: "batch-sms",
-            database: "batch-sms",
+            type: "sqlite",
+            database: "batch-sms.db",
             synchronize: false,
-            logging: false,
+            logging: true,
             entities: ["app/entity/**/*.ts"],
             migrations: ["database/migrations/**/*.ts"],
 

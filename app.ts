@@ -32,19 +32,19 @@ export default function(app: Application) {
         let userObj: any = null;
         if (provider === 'api') {
             const User = ctx.repo.User;
-            userObj = await User.createQueryBuilder()
+            userObj = await User.createQueryBuilder('users')
             .where('username = :username', {
                 username: user.username,
             })
-            .addSelect('password')
+            .addSelect('users.password')
             .getOne();
         } else if (provider === 'admin') {
             const Manager = ctx.repo.Manager;
-            userObj = await Manager.createQueryBuilder()
+            userObj = await Manager.createQueryBuilder('managers')
             .where('username = :username', {
                 username: user.username,
             })
-            .addSelect('password')
+            .addSelect('managers.password')
             .getOne();
         }
         if (!userObj || userObj.password !== user.password) {

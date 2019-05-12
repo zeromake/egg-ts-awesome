@@ -5,7 +5,7 @@ export default function(app: Application) {
     const router = rootRouter.namespace("/api", app.passport.authorized("api"));
 
     rootRouter.post(
-        "/api/session",
+        "/api/sessions",
         app.passport.authenticate("api", {
             successRedirect: null,
             successReturnToOrRedirect: null,
@@ -13,9 +13,9 @@ export default function(app: Application) {
         }),
         controller.api.session.login,
     );
-    rootRouter.delete("/api/session", controller.api.session.logout);
+    rootRouter.delete("/api/sessions", controller.api.session.logout);
 
-    router.get("/session", controller.api.session.userinfo);
+    router.get("/sessions", controller.api.session.userinfo);
 
     router.resources("user", "/users", controller.api.user);
 
