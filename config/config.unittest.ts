@@ -8,8 +8,8 @@ export default (appInfo: EggAppInfo) => {
         connection: {
             type: "sqlite",
             database: "batch-sms.db",
-            synchronize: false,
-            logging: true,
+            synchronize: true,
+            logging: false,
             entities: ["app/entity/**/*.ts"],
             migrations: ["database/migrations/**/*.ts"],
 
