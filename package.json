@@ -27,7 +27,7 @@
   "dependencies": {
     "@types/passport": "^1.0.0",
     "@types/passport-local": "^1.0.33",
-    "@zeromake/egg-typeorm": "^1.4.1",
+    "@zeromake/egg-typeorm": "^1.4.3",
     "egg": "^2.22.2",
     "egg-passport": "^2.0.1",
     "egg-passport-local": "^1.2.1",

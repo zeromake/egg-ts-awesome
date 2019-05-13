@@ -383,10 +383,10 @@
   resolved "https://registry.npm.taobao.org/@types/yargs/download/@types/yargs-12.0.12.tgz#45dd1d0638e8c8f153e87d296907659296873916"
   integrity sha1-Rd0dBjjoyPFT6H0paQdlkpaHORY=
 
-"@zeromake/egg-typeorm@^1.4.1":
-  version "1.4.1"
-  resolved "https://registry.npm.taobao.org/@zeromake/egg-typeorm/download/@zeromake/egg-typeorm-1.4.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40zeromake%2Fegg-typeorm%2Fdownload%2F%40zeromake%2Fegg-typeorm-1.4.1.tgz#dcf14f5e1f43b466a5b41819b955200f8951a221"
-  integrity sha1-3PFPXh9DtGaltBgZuVUgD4lRoiE=
+"@zeromake/egg-typeorm@^1.4.3":
+  version "1.4.3"
+  resolved "https://registry.npm.taobao.org/@zeromake/egg-typeorm/download/@zeromake/egg-typeorm-1.4.3.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40zeromake%2Fegg-typeorm%2Fdownload%2F%40zeromake%2Fegg-typeorm-1.4.3.tgz#804cf0ff097f51110b9a4720b5af28148c3b6bfd"
+  integrity sha1-gEzw/wl/URELmkcgta8oFIw7a/0=
   dependencies:
     chokidar "^3.0.0"
     fs-extra "^7.0.1"
