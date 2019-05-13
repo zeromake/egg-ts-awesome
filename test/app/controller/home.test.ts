@@ -6,9 +6,11 @@ describe("test/app/controller/home.test.ts", async () => {
     // const UserRepository = conn.getRepository(User);
     let app: MockApplication = null as any;
     let userObj: any = null;
+    let managrObj: any = null;
     before(async () => {
         app = mm.app();
         const ctx = app.mockContext();
+
         const user = {
             username: "test",
             password: "test",
@@ -16,13 +18,18 @@ describe("test/app/controller/home.test.ts", async () => {
         };
         const u = await ctx.repo.User.save(user);
         userObj = u;
+
+        managrObj = await ctx.repo.Manager.save(user);
         return app.ready();
     });
+
     after(async () => {
         const ctx = app.mockContext();
         await ctx.repo.User.delete(userObj.id);
+        await ctx.repo.Manager.delete(managrObj.id);
         return app.close();
     });
+
     it("should GET /", async () => {
         const result = await app
             .httpRequest()
@@ -41,6 +48,26 @@ describe("test/app/controller/home.test.ts", async () => {
         const result = await app
             .httpRequest()
             .post('/api/sessions')
+            .send({
+                username: "test",
+                password: "test",
+            })
+            .set('Content-Type', 'application/json')
+            .expect(200);
+        const user = result.body;
+        [
+            'username',
+            'last_ip',
+            'id',
+        ].forEach(i => {
+            assert.equal(user[i], userObj[i]);
+        });
+    });
+
+    it("should POST admin /sessions", async () => {
+        const result = await app
+            .httpRequest()
+            .post('/api/admin/sessions')
             .send({
                 username: "test",
                 password: "test",
