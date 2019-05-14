@@ -3,7 +3,6 @@
 
 import 'egg';
 import ExportAdminSession from '../../../app/controller/admin/session';
-import ExportApiHome from '../../../app/controller/api/home';
 import ExportApiSession from '../../../app/controller/api/session';
 import ExportApiUser from '../../../app/controller/api/user';
 import ExportWwwHome from '../../../app/controller/www/home';
@@ -14,7 +13,6 @@ declare module 'egg' {
       session: ExportAdminSession;
     }
     api: {
-      home: ExportApiHome;
       session: ExportApiSession;
       user: ExportApiUser;
     }

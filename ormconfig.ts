@@ -10,7 +10,6 @@ const configMap = {
     unittest,
 };
 const config = configMap[env]({});
-
-export default {
+module.exports = {
     ...config.typeorm.connection,
 };

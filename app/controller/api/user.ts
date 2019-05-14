@@ -68,7 +68,7 @@ export default class User extends Controller {
             const order = arr[1] || "ASC";
             qb.orderBy(arr[0], order.toLocaleUpperCase());
         }
-        // const count = await qb.getCount();
+
         const [users, total] = await qb.getManyAndCount();
         ctx.set(
             "X-Pagination",
