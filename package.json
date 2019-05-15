@@ -1,7 +1,7 @@
 {
   "name": "batch-sms",
   "version": "1.0.0",
-  "description": "batch sms",
+  "description": "egg-ts-awesome",
   "private": true,
   "egg": {
     "typescript": true,
@@ -9,8 +9,8 @@
   },
   "scripts": {
     "format": "prettier --write \"{app,config,test,database}/**/*.ts\"",
-    "start": "egg-scripts start --daemon --title=batch-sms",
-    "stop": "egg-scripts stop --title=batch-sms",
+    "start": "egg-scripts start --daemon --title=egg-ts-awesome",
+    "stop": "egg-scripts stop --title=egg-ts-awesome",
     "dev": "egg-bin dev",
     "debug": "egg-bin debug",
     "test-local": "egg-bin test",

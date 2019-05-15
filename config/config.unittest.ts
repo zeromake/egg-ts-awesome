@@ -7,7 +7,7 @@ export default (appInfo: EggAppInfo) => {
     config.typeorm = {
         connection: {
             type: "sqlite",
-            database: "batch-sms.db",
+            database: "egg-ts-awesome.db",
             synchronize: true,
             logging: false,
             entities: ["app/entity/**/*.ts"],
