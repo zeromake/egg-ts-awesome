@@ -10,6 +10,7 @@ logs/
 *.swp
 *.js
 !.autod.conf.js
+!swagger-jsdoc.js
 
 app/**/*.js
 test/**/*.js

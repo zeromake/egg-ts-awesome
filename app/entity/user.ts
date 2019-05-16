@@ -25,4 +25,22 @@ export default class User extends BaseColumn {
         length: 40,
     })
     public last_ip: string;
+
+    /**
+     * @description 邮箱
+     */
+    @Column({
+        default: "",
+        select: false,
+    })
+    public email: string;
+
+    /**
+     * @description 手机
+     */
+    @Column({
+        default: "",
+        select: false,
+    })
+    public phone: string;
 }

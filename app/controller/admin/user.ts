@@ -53,11 +53,8 @@ export default class User extends Controller {
         ctx.body = user;
     }
 
-    /**
-     * @swagger
-     */
     public async update(ctx: Context) {
-        const id = +ctx.user.id;
+        const id = +ctx.params.id || 0;
         const User = ctx.repo.User;
         const body = ctx.request.body;
         body.id = id;
@@ -68,5 +65,47 @@ export default class User extends Controller {
             ip: ctx.ip,
             last_at: new Date(),
         });
+    }
+
+    public async index(ctx: Context) {
+        const query = ctx.query;
+        const User = ctx.repo.User;
+        const qb = User.createQueryBuilder();
+        if (query.id) {
+            qb.where("id = :id", {
+                id: query.id,
+            });
+        }
+        if (query.username) {
+            qb.where("username = :username", {
+                username: query.username,
+            });
+        }
+        const pageNum = +query.page_num || 1;
+        let pageSize = +query.page_size || 20;
+        if (pageSize > 200) {
+            pageSize = 200;
+        }
+        qb.take(pageSize);
+        if (pageNum > 1) {
+            qb.skip(pageSize * (pageNum - 1));
+        }
+        if (query.sort) {
+            const sort = query.sort;
+            const arr = sort.split("-");
+            const order = arr[1] || "ASC";
+            qb.orderBy(arr[0], order.toLocaleUpperCase());
+        }
+
+        const [users, total] = await qb.getManyAndCount();
+        ctx.set(
+            "X-Pagination",
+            JSON.stringify({
+                page_num: pageNum,
+                page_size: pageSize,
+                total,
+            }),
+        );
+        ctx.body = users;
     }
 }

@@ -3,6 +3,7 @@
 
 import 'egg';
 import ExportAdminSession from '../../../app/controller/admin/session';
+import ExportAdminUser from '../../../app/controller/admin/user';
 import ExportApiSession from '../../../app/controller/api/session';
 import ExportApiUser from '../../../app/controller/api/user';
 import ExportWwwHome from '../../../app/controller/www/home';
@@ -11,6 +12,7 @@ declare module 'egg' {
   interface IController {
     admin: {
       session: ExportAdminSession;
+      user: ExportAdminUser;
     }
     api: {
       session: ExportApiSession;

@@ -35,6 +35,12 @@ export default function(app: Application) {
      *             last_ip:
      *               description: 最后登录ip
      *               type: string
+     *             email:
+     *               description: 邮箱
+     *               type: string
+     *             phone:
+     *               description: 手机号
+     *               type: string
      * tags:
      *  - name: apiSession
      *    description: api会话
@@ -117,7 +123,7 @@ export default function(app: Application) {
      */
     router.get("/sessions", controller.api.session.userinfo);
 
-    router.resources("user", "/users", controller.api.user);
+    // router.resources("user", "/users", controller.api.user);
 
     /**
      * @swagger
