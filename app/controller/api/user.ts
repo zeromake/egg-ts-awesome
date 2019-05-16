@@ -1,6 +1,35 @@
 import { Controller, Context } from "egg";
 
+/**
+ * @swagger
+ * tags:
+ *   - name: user
+ *     description: 用户
+ */
+
 export default class User extends Controller {
+    /**
+     * @swagger
+     * /users:
+     *   post:
+     *     security:
+     *       - cookieAuth: []
+     *     description: 创建用户
+     *     tags:
+     *       - user
+     *     requestBody:
+     *       content:
+     *         application/json:
+     *           schema:
+     *             $ref: '#/components/schemas/userlogin'
+     *     responses:
+     *       200:
+     *         description: 创建成功
+     *         content:
+     *           application/json:
+     *             schema:
+     *               $ref: '#/components/schemas/user'
+     */
     public async create(ctx: Context) {
         // const ctx = this.ctx;
         const body = ctx.request.body;
@@ -18,8 +47,7 @@ export default class User extends Controller {
         user = await User.save({
             ...body,
             password,
-            ip: ctx.ip,
-            last_at: new Date(),
+            last_ip: ctx.ip,
         });
         delete user.password;
         ctx.body = user;

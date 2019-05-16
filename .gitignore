@@ -21,3 +21,4 @@ config/**/*.local.ts
 config/**/*.prod.ts
 *.log
 *.db
+app/public/docs

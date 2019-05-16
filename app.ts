@@ -37,6 +37,7 @@ export default function(app: Application) {
                 username: user.username,
             })
             .addSelect('users.password')
+            .take(1)
             .getOne();
         } else if (provider === 'admin') {
             const Manager = ctx.repo.Manager;
@@ -45,6 +46,7 @@ export default function(app: Application) {
                 username: user.username,
             })
             .addSelect('managers.password')
+            .take(1)
             .getOne();
         }
         if (!userObj || userObj.password !== user.password) {
