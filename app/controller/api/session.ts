@@ -6,7 +6,7 @@ export default class Session extends Controller {
         const ctxUser = ctx.user;
         const user = {
             id: ctxUser.id,
-            last_ip: ctx.ip || '',
+            last_ip: ctx.ip || "",
         };
         ctx.body = { ...ctxUser, ...(await User.save(user)) };
     }

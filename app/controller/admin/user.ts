@@ -10,7 +10,7 @@ import { Controller, Context } from "egg";
 export default class User extends Controller {
     /**
      * @swagger
-     * /users:
+     * /admin/users:
      *   post:
      *     security:
      *       - cookieAuth: []

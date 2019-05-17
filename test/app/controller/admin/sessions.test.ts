@@ -29,19 +29,15 @@ describe("Test admin sessions", async () => {
     it("should POST admin /sessions", async () => {
         const result = await app
             .httpRequest()
-            .post('/api/admin/sessions')
+            .post("/api/admin/sessions")
             .send({
                 username: "test",
                 password: "test",
             })
-            .set('Content-Type', 'application/json')
+            .set("Content-Type", "application/json")
             .expect(200);
         const user = result.body;
-        [
-            'username',
-            'last_ip',
-            'id',
-        ].forEach(i => {
+        ["username", "last_ip", "id"].forEach(i => {
             assert.equal(user[i], managrObj[i]);
         });
     });

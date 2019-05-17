@@ -2,7 +2,10 @@ import { Application, Context } from "egg";
 
 export default function(app: Application) {
     const { router: rootRouter, controller } = app;
-    const router = rootRouter.namespace("/api/admin", app.passport.authorized("admin"));
+    const router = rootRouter.namespace(
+        "/api/admin",
+        app.passport.authorized("admin"),
+    );
 
     rootRouter.post(
         "/api/admin/sessions",

@@ -41,6 +41,17 @@ export default function(app: Application) {
      *             phone:
      *               description: 手机号
      *               type: string
+     *     message:
+     *       type: object
+     *       properties:
+     *         status:
+     *           type: integer
+     *           description: 状态码
+     *         message:
+     *           type: string
+     *           description: 提示消息
+     *       required:
+     *         - message
      * tags:
      *  - name: apiSession
      *    description: api会话
@@ -96,11 +107,7 @@ export default function(app: Application) {
      *         content:
      *           application/json:
      *             schema:
-     *               type: object
-     *               properties:
-     *                 message:
-     *                   type: string
-     *                   description: 提示消息
+     *               $ref: '#/components/schemas/message'
      */
     rootRouter.delete("/api/sessions", controller.api.session.logout);
 

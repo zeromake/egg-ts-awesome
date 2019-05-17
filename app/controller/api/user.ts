@@ -10,7 +10,7 @@ import { Controller, Context } from "egg";
 export default class User extends Controller {
     /**
      * @swagger
-     * /users:
+     * /user:
      *   post:
      *     security:
      *       - cookieAuth: []
@@ -55,18 +55,58 @@ export default class User extends Controller {
 
     /**
      * @swagger
+     * /user:
+     *   put:
+     *     security:
+     *        - cookieAuth: []
+     *     description: 修改用户密码
+     *     tags:
+     *       - user
+     *     requestBody:
+     *       content:
+     *         application/json:
+     *           schema:
+     *             type: object
+     *             properties:
+     *               confirm_password:
+     *                 type: string
+     *                 description: 确认密码
+     *               password:
+     *                 type: string
+     *                 description: 新密码
+     *             required:
+     *               - confirm_password
+     *               - password
+     *     responses:
+     *       200:
+     *         description: 修改成功
+     *         content:
+     *           application/json:
+     *             schema:
+     *               $ref: '#/components/schemas/message'
      */
     public async update(ctx: Context) {
         const id = +ctx.user.id;
         const User = ctx.repo.User;
         const body = ctx.request.body;
         body.id = id;
+        const confirmPassword = body.confirm_password;
+        const user = await User.createQueryBuilder("users")
+            .select(["password"])
+            .where("id = :id", { id })
+            .take(1)
+            .getOne();
+        if (!user || confirmPassword !== user.password) {
+            ctx.status = 403;
+            ctx.message = "no permission access";
+            return;
+        }
 
-        delete body.username;
-        ctx.body = await User.save({
-            ...body,
-            ip: ctx.ip,
-            last_at: new Date(),
+        await User.save({
+            password: body.password,
         });
+        ctx.body = {
+            message: "ok",
+        };
     }
 }
