@@ -1,16 +1,18 @@
 module.exports = {
     apis: [
-        "app/controller/**/*.ts",
-        "app/router/**/*.ts"
+        'app/controller/**/*.ts',
+        'app/router/**/*.ts',
     ],
+    openapi: '3.0.2',
     info: {
-        title: "awesome",
-        version: "0.1.0",
+        title: 'egg-ts-awesome',
+        version: '0.1.0',
+        description: 'egg ts awesome',
     },
-    openapi: "3.0.2",
     servers: [
         {
-            url: '/api'
+            url: '/api',
+            description: '接口',
         }
-    ]
+    ],
 };
