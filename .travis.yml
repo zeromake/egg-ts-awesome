@@ -2,9 +2,15 @@ sudo: false
 language: node_js
 node_js:
   - '8'
+env:
+  - EGG_SERVER_ENV=unittest
 install:
   - npm i npminstall && npminstall
+  - docker-compose up -d
 script:
+  - cp ./config/config.default.ts ./config/config.local.ts
+  - cp ./config/config.default.ts ./config/config.prod.ts
+  - npm run typeorm migration:run
   - npm run ci
 after_script:
   - npminstall codecov && codecov
