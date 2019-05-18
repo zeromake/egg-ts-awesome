@@ -2624,7 +2624,7 @@ egg-development@^2.4.2:
     mz-modules "^2.1.0"
     utility "^1.13.1"
 
-egg-i18n@^2.0.0:
+egg-i18n@^2.0.0, egg-i18n@^2.1.1:
   version "2.1.1"
   resolved "https://registry.npm.taobao.org/egg-i18n/download/egg-i18n-2.1.1.tgz#3e1a638edbb6a4437229b163b8b3715d24376f0d"
   integrity sha1-Phpjjtu2pENyKbFjuLNxXSQ3bw0=

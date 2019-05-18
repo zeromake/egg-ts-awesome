@@ -4,6 +4,7 @@
 import 'egg';
 import 'egg-onerror';
 import 'egg-session';
+import 'egg-i18n';
 import 'egg-watcher';
 import 'egg-multipart';
 import 'egg-development';

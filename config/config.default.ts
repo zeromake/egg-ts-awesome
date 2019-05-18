@@ -45,6 +45,9 @@ export default (appInfo: EggAppInfo) => {
             appInfo.name
         }`,
     };
+    config.i18n = {
+        defaultLocale: "zh-CN",
+    };
 
     // the return config will combines to EggAppConfig
     return {

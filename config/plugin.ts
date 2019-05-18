@@ -9,7 +9,7 @@ const plugin: EggPlugin = {
     // 日志切割 require schedule
     logrotator: false,
     schedule: false,
-    i18n: false,
+    i18n: true,
     static: true,
     typeorm: {
         enable: true,

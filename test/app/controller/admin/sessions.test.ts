@@ -1,4 +1,5 @@
 import * as assert from "assert";
+import { Context } from "egg";
 import { app } from "@zeromake/egg-mock/bootstrap";
 import { MockTest } from "@zeromake/egg-mock";
 import { SuperTest } from "supertest";
@@ -8,9 +9,10 @@ describe("Test admin sessions", async () => {
     let managrObj: any = null;
     // await app ready
     let agent: SuperTest<MockTest> = null as any;
+    let ctx: Context = null as any;
     before(async () => {
         agent = app.httpAgent();
-        const ctx = app.mockContext();
+        ctx = app.mockContext();
 
         const user = {
             username: "test",
@@ -28,7 +30,7 @@ describe("Test admin sessions", async () => {
         const result = await agent
             .get("/api/admin/")
             .expect(401);
-        assert(result.text === "User not authenticated");
+        assert(result.text === ctx.gettext("unAuth"));
     };
     const authHome = async () => {
         await agent
@@ -65,7 +67,7 @@ describe("Test admin sessions", async () => {
         const result = await agent
             .delete("/api/admin/sessions")
             .expect(200);
-        assert(result.body.message === "ok");
+        assert(result.body.message === ctx.gettext("success"));
     });
 
     it("should after logout admin /", notAuthHome);

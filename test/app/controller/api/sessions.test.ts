@@ -1,10 +1,12 @@
 import * as assert from "assert";
+import { Context } from "egg";
 import { app } from "@zeromake/egg-mock/bootstrap";
 
 describe("Test api sessions", async () => {
     let userObj: any = null;
+    let ctx: Context = null as any;
     before(async () => {
-        const ctx = app.mockContext();
+        ctx = app.mockContext();
 
         const user = {
             username: "test",
@@ -24,7 +26,7 @@ describe("Test api sessions", async () => {
             .httpRequest()
             .get("/api")
             .expect(401);
-        assert(result.text === "User not authenticated");
+        assert(result.text === ctx.gettext("unAuth"));
     });
     it("should POST api /sessions", async () => {
         const result = await app
