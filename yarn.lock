@@ -398,7 +398,7 @@
     "@types/cookiejar" "*"
     "@types/node" "*"
 
-"@types/supertest@^2.0.0":
+"@types/supertest@^2.0.7":
   version "2.0.7"
   resolved "https://registry.npm.taobao.org/@types/supertest/download/@types/supertest-2.0.7.tgz#46ff6508075cd4519736be060f0d6331a5c8ca7b"
   integrity sha1-Rv9lCAdc1FGXNr4GDw1jMaXIyns=
@@ -416,6 +416,32 @@
   version "12.0.12"
   resolved "https://registry.npm.taobao.org/@types/yargs/download/@types/yargs-12.0.12.tgz#45dd1d0638e8c8f153e87d296907659296873916"
   integrity sha1-Rd0dBjjoyPFT6H0paQdlkpaHORY=
+
+"@zeromake/egg-mock@^3.23.1":
+  version "3.23.1"
+  resolved "https://registry.npm.taobao.org/@zeromake/egg-mock/download/@zeromake/egg-mock-3.23.1.tgz#5d52e35ad69845ae3479bc0e1c2dfc139b05f6ea"
+  integrity sha1-XVLjWtaYRa40ebwOHC38E5sF9uo=
+  dependencies:
+    "@types/power-assert" "^1.5.0"
+    await-event "^2.1.0"
+    co "^4.6.0"
+    coffee "^5.2.1"
+    debug "^4.1.1"
+    detect-port "^1.3.0"
+    egg-logger "^2.4.1"
+    egg-utils "^2.4.1"
+    extend2 "^1.0.0"
+    get-ready "^2.0.1"
+    globby "^9.2.0"
+    is-type-of "^1.2.1"
+    ko-sleep "^1.0.3"
+    merge-descriptors "^1.0.1"
+    methods "^1.1.2"
+    mm "^2.5.0"
+    power-assert "^1.6.1"
+    rimraf "^2.6.3"
+    supertest "^4.0.2"
+    urllib "^2.33.3"
 
 "@zeromake/egg-typeorm@^1.4.3":
   version "1.4.3"
@@ -591,6 +617,11 @@ argparse@^1.0.7:
   integrity sha1-vNZ5HqWuCXJeF+WtmIE0zUCz2RE=
   dependencies:
     sprintf-js "~1.0.2"
+
+argv@^0.0.2:
+  version "0.0.2"
+  resolved "https://registry.npm.taobao.org/argv/download/argv-0.0.2.tgz#ecbd16f8949b157183711b1bda334f37840185ab"
+  integrity sha1-7L0W+JSbFXGDcRsb2jNPN4QBhas=
 
 arr-diff@^4.0.0:
   version "4.0.0"
@@ -1950,6 +1981,17 @@ code-point-at@^1.0.0:
   version "1.1.0"
   resolved "https://registry.npm.taobao.org/code-point-at/download/code-point-at-1.1.0.tgz#0d070b4d043a5bea33a2f1a40e2edb3d9a4ccf77"
   integrity sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
+
+codecov@^3.5.0:
+  version "3.5.0"
+  resolved "https://registry.npm.taobao.org/codecov/download/codecov-3.5.0.tgz#3d0748932f9cb41e1ad7f21fa346ef1b2b1bed47"
+  integrity sha1-PQdIky+ctB4a1/Ifo0bvGysb7Uc=
+  dependencies:
+    argv "^0.0.2"
+    ignore-walk "^3.0.1"
+    js-yaml "^3.13.1"
+    teeny-request "^3.11.3"
+    urlgrey "^0.4.4"
 
 coffee@^5.2.1:
   version "5.2.1"
@@ -5146,6 +5188,11 @@ node-environment-flags@1.0.5:
     object.getownpropertydescriptors "^2.0.3"
     semver "^5.7.0"
 
+node-fetch@^2.2.0:
+  version "2.6.0"
+  resolved "https://registry.npm.taobao.org/node-fetch/download/node-fetch-2.6.0.tgz#e633456386d4aa55863f676a7ab0daa8fdecb0fd"
+  integrity sha1-5jNFY4bUqlWGP2dqerDaqP3ssP0=
+
 node-homedir@^1.1.1:
   version "1.1.1"
   resolved "https://registry.npm.taobao.org/node-homedir/download/node-homedir-1.1.1.tgz#736db0b60e3bba8aba68df9927de40a7aabe1075"
@@ -6853,6 +6900,15 @@ tcp-proxy.js@^1.0.5:
     debug "^3.0.1"
     through2 "^2.0.3"
 
+teeny-request@^3.11.3:
+  version "3.11.3"
+  resolved "https://registry.npm.taobao.org/teeny-request/download/teeny-request-3.11.3.tgz#335c629f7645e5d6599362df2f3230c4cbc23a55"
+  integrity sha1-M1xin3ZF5dZZk2LfLzIwxMvCOlU=
+  dependencies:
+    https-proxy-agent "^2.2.1"
+    node-fetch "^2.2.0"
+    uuid "^3.3.2"
+
 test-exclude@^5.1.0, test-exclude@^5.2.3:
   version "5.2.3"
   resolved "https://registry.npm.taobao.org/test-exclude/download/test-exclude-5.2.3.tgz#c3d3e1e311eb7ee405e092dac10aefd09091eac0"
@@ -7222,6 +7278,11 @@ urix@^0.1.0:
   version "0.1.0"
   resolved "https://registry.npm.taobao.org/urix/download/urix-0.1.0.tgz#da937f7a62e21fec1fd18d49b35c2935067a6c72"
   integrity sha1-2pN/emLiH+wf0Y1Js1wpNQZ6bHI=
+
+urlgrey@^0.4.4:
+  version "0.4.4"
+  resolved "https://registry.npm.taobao.org/urlgrey/download/urlgrey-0.4.4.tgz#892fe95960805e85519f1cd4389f2cb4cbb7652f"
+  integrity sha1-iS/pWWCAXoVRnxzUOJ8stMu3ZS8=
 
 urllib@*, urllib@^2.24.0, urllib@^2.25.1, urllib@^2.33.0, urllib@^2.33.3:
   version "2.34.0"

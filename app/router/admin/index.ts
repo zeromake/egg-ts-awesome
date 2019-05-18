@@ -16,7 +16,7 @@ export default function(app: Application) {
         }),
         controller.admin.session.login,
     );
-    rootRouter.delete("api/admin/sessions", controller.admin.session.logout);
+    rootRouter.delete("/api/admin/sessions", controller.admin.session.logout);
 
     router.get("/sessions", controller.admin.session.userinfo);
 

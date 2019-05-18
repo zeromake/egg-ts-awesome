@@ -14,7 +14,7 @@ export default class Session extends Controller {
     public async logout(ctx: Context) {
         ctx.logout("admin");
         ctx.body = {
-            message: "login ok",
+            message: "ok",
         };
     }
 

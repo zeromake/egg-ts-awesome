@@ -1,5 +1,5 @@
 import * as assert from "assert";
-import { app } from "egg-mock/bootstrap";
+import { app } from "@zeromake/egg-mock/bootstrap";
 
 describe("Test api sessions", async () => {
     let userObj: any = null;
