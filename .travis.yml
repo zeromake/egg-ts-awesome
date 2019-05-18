@@ -7,6 +7,7 @@ env:
 install:
   - yarn
   - docker-compose up -d redis
+  - rm *.db
 script:
   - npm run ci
 after_script:
