@@ -12,6 +12,15 @@ module.exports = {
   dep: [
     'egg',
     'egg-scripts',
+    '@zeromake/egg-mock',
+    '@zeromake/egg-typeorm',
+    'egg-passport',
+    'passport-local',
+    'egg-redis',
+    'egg-router-plus',
+    'egg-session-redis',
+    'mysql2',
+    'typeorm',
   ],
   devdep: [
     'autod',

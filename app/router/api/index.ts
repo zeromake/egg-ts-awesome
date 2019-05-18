@@ -130,8 +130,6 @@ export default function(app: Application) {
      */
     router.get("/sessions", controller.api.session.userinfo);
 
-    // router.resources("user", "/users", controller.api.user);
-
     /**
      * @swagger
      * /register:
@@ -155,9 +153,8 @@ export default function(app: Application) {
     rootRouter.post("/api/register", controller.api.user.create);
 
     router.get("/", async (ctx: Context) => {
-        ctx.body = router.stack.reduce((routes, layer) => {
-            routes[JSON.stringify(layer.methods)] = layer.path;
-            return routes;
-        }, {});
+        ctx.body = {
+            message: ctx.gettext("home", ctx.gettext("api")),
+        };
     });
 }

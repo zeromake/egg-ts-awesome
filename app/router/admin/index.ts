@@ -2,6 +2,7 @@ import { Application, Context } from "egg";
 
 export default function(app: Application) {
     const { router: rootRouter, controller } = app;
+
     const router = rootRouter.namespace(
         "/api/admin",
         app.passport.authorized("admin"),
@@ -21,9 +22,8 @@ export default function(app: Application) {
     router.get("/sessions", controller.admin.session.userinfo);
 
     router.get("/", async (ctx: Context) => {
-        ctx.body = router.stack.reduce((routes, layer) => {
-            routes[JSON.stringify(layer.methods)] = layer.path;
-            return routes;
-        }, {});
+        ctx.body = {
+            message: ctx.gettext("home", ctx.gettext("admin")),
+        };
     });
 }

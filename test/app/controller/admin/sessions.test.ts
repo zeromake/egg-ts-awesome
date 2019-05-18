@@ -30,7 +30,7 @@ describe("Test admin sessions", async () => {
         const result = await agent
             .get("/api/admin/")
             .expect(401);
-        assert(result.text === ctx.gettext("unAuth"));
+        assert(result.body.message === ctx.gettext("unAuth"));
     };
     const authHome = async () => {
         await agent

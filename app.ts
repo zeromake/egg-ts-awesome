@@ -62,12 +62,20 @@ export default function(app: Application) {
         return async function authorized(ctx: Context, next: () => Promise<void>): Promise<void> {
             if (!ctx.isAuthenticated()) {
                 ctx.status = 401;
-                ctx.message = ctx.gettext("unAuth");
+                ctx.body = {
+                    message: ctx.gettext("unAuth"),
+                };
                 return;
             }
             if (ctx.user.provider !== provider) {
                 ctx.status = 403;
-                ctx.message = ctx.gettext("unPermission", ctx.user.provider, provider);
+                ctx.body = {
+                    message: ctx.gettext(
+                        "unPermission",
+                        ctx.gettext(ctx.user.provider),
+                        ctx.gettext(provider),
+                    ),
+                };
                 return;
             }
             return next();

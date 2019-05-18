@@ -26,7 +26,7 @@ describe("Test api sessions", async () => {
             .httpRequest()
             .get("/api")
             .expect(401);
-        assert(result.text === ctx.gettext("unAuth"));
+        assert(result.body.message === ctx.gettext("unAuth"));
     });
     it("should POST api /sessions", async () => {
         const result = await app
