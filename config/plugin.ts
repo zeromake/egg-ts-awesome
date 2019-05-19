@@ -29,6 +29,10 @@ const plugin: EggPlugin = {
         enable: true,
         package: "egg-session-redis",
     },
+    swagger: {
+        enable: true,
+        package: "@zeromake/egg-swagger",
+    },
     // static: true,
     // nunjucks: {
     //   enable: true,

@@ -15,6 +15,7 @@ import '@zeromake/egg-typeorm';
 import 'egg-passport';
 import 'egg-redis';
 import 'egg-session-redis';
+import '@zeromake/egg-swagger';
 import { EggPluginItem } from 'egg';
 declare module 'egg' {
   interface EggPlugin {
@@ -35,5 +36,6 @@ declare module 'egg' {
     passport?: EggPluginItem;
     redis?: EggPluginItem;
     sessionRedis?: EggPluginItem;
+    swagger?: EggPluginItem;
   }
 }

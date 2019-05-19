@@ -384,6 +384,11 @@
   dependencies:
     "@types/superagent" "*"
 
+"@types/swagger-schema-official@^2.0.15":
+  version "2.0.15"
+  resolved "https://registry.npm.taobao.org/@types/swagger-schema-official/download/@types/swagger-schema-official-2.0.15.tgz#5591141e8e3e2e81a4b49c3a3d2321d1367d4ebc"
+  integrity sha1-VZEUHo4+LoGktJw6PSMh0TZ9Trw=
+
 "@types/urllib@^2.28.1":
   version "2.33.0"
   resolved "https://registry.npm.taobao.org/@types/urllib/download/@types/urllib-2.33.0.tgz#f1fa250066bd070695e961ad80fb2d098a8f6ede"
@@ -421,6 +426,22 @@
     rimraf "^2.6.3"
     supertest "^4.0.2"
     urllib "^2.33.3"
+
+"@zeromake/egg-swagger@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.npm.taobao.org/@zeromake/egg-swagger/download/@zeromake/egg-swagger-0.1.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40zeromake%2Fegg-swagger%2Fdownload%2F%40zeromake%2Fegg-swagger-0.1.1.tgz#8db89c02b0971709ffaca00055adfc8f47823c58"
+  integrity sha1-jbicArCXFwn/rKAAVa38j0eCPFg=
+  dependencies:
+    assert "^2.0.0"
+    chokidar "^3.0.0"
+    doctrine "^3.0.0"
+    glob "^7.1.4"
+    koa-compose "^4.1.0"
+    koa-range "^0.3.0"
+    koa-static-cache "^5.1.2"
+    swagger-parser "^6.0.5"
+    swagger-ui-dist "^3.22.1"
+    ylru "^1.2.1"
 
 "@zeromake/egg-typeorm@^1.4.3":
   version "1.4.3"
@@ -670,6 +691,16 @@ assert-plus@1.0.0, assert-plus@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npm.taobao.org/assert-plus/download/assert-plus-1.0.0.tgz#f12e0f3c5d77b0b1cdd9146942e4e96c1e4dd525"
   integrity sha1-8S4PPF13sLHN2RRpQuTpbB5N1SU=
+
+assert@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npm.taobao.org/assert/download/assert-2.0.0.tgz#95fc1c616d48713510680f2eaf2d10dd22e02d32"
+  integrity sha1-lfwcYW1IcTUQaA8ury0Q3SLgLTI=
+  dependencies:
+    es6-object-assign "^1.1.0"
+    is-nan "^1.2.1"
+    object-is "^1.0.1"
+    util "^0.12.0"
 
 assign-symbols@^1.0.0:
   version "1.0.0"
@@ -2279,7 +2310,7 @@ default-user-agent@^1.0.0:
   dependencies:
     os-name "~1.0.3"
 
-define-properties@^1.1.1, define-properties@^1.1.2:
+define-properties@^1.1.1, define-properties@^1.1.2, define-properties@^1.1.3:
   version "1.1.3"
   resolved "https://registry.npm.taobao.org/define-properties/download/define-properties-1.1.3.tgz#cf88da6cbee26fe6db7094f61d870cbd84cee9f1"
   integrity sha1-z4jabL7ib+bbcJT2HYcMvYTO6fE=
@@ -2419,6 +2450,13 @@ doctrine@2.1.0:
   version "2.1.0"
   resolved "https://registry.npm.taobao.org/doctrine/download/doctrine-2.1.0.tgz#5cd01fc101621b42c4cd7f5d1a66243716d3f39d"
   integrity sha1-XNAfwQFiG0LEzX9dGmYkNxbT850=
+  dependencies:
+    esutils "^2.0.2"
+
+doctrine@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npm.taobao.org/doctrine/download/doctrine-3.0.0.tgz#addebead72a6574db783639dc87a121773973961"
+  integrity sha1-rd6+rXKmV023g2OdyHoSF3OXOWE=
   dependencies:
     esutils "^2.0.2"
 
@@ -2927,7 +2965,7 @@ error-inject@^1.0.0:
   resolved "https://registry.npm.taobao.org/error-inject/download/error-inject-1.0.0.tgz#e2b3d91b54aed672f309d950d154850fa11d4f37"
   integrity sha1-4rPZG1Su1nLzCdlQ0VSFD6EdTzc=
 
-es-abstract@^1.5.1:
+es-abstract@^1.12.0, es-abstract@^1.5.1:
   version "1.13.0"
   resolved "https://registry.npm.taobao.org/es-abstract/download/es-abstract-1.13.0.tgz#ac86145fdd5099d8dd49558ccba2eaf9b88e24e9"
   integrity sha1-rIYUX91QmdjdSVWMy6Lq+biOJOk=
@@ -2982,6 +3020,11 @@ es6-map@^0.1.3:
     es6-set "~0.1.5"
     es6-symbol "~3.1.1"
     event-emitter "~0.3.5"
+
+es6-object-assign@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npm.taobao.org/es6-object-assign/download/es6-object-assign-1.1.0.tgz#c2c3582656247c39ea107cb1e6652b6f9f24523c"
+  integrity sha1-wsNYJlYkfDnqEHyx5mUrb58kUjw=
 
 es6-promise@^4.0.3:
   version "4.2.6"
@@ -3590,7 +3633,7 @@ glob@7.1.3:
     once "^1.3.0"
     path-is-absolute "^1.0.0"
 
-glob@^7.1.1, glob@^7.1.2, glob@^7.1.3:
+glob@^7.1.1, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4:
   version "7.1.4"
   resolved "https://registry.npm.taobao.org/glob/download/glob-7.1.4.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fglob%2Fdownload%2Fglob-7.1.4.tgz#aa608a2f6c577ad357e1ae5a5c26d9a8d1969255"
   integrity sha1-qmCKL2xXetNX4a5aXCbZqNGWklU=
@@ -3980,6 +4023,11 @@ is-accessor-descriptor@^1.0.0:
   dependencies:
     kind-of "^6.0.0"
 
+is-arguments@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.npm.taobao.org/is-arguments/download/is-arguments-1.0.4.tgz#3faf966c7cba0ff437fb31f6250082fcf0448cf3"
+  integrity sha1-P6+WbHy6D/Q3+zH2JQCC/PBEjPM=
+
 is-arrayish@^0.2.1:
   version "0.2.1"
   resolved "https://registry.npm.taobao.org/is-arrayish/download/is-arrayish-0.2.1.tgz#77c99840527aa8ecb1a8ba697b80645a7a926a9d"
@@ -4317,7 +4365,7 @@ js-tokens@^3.0.2:
   resolved "https://registry.npm.taobao.org/js-tokens/download/js-tokens-3.0.2.tgz#9866df395102130e38f7f996bceb65443209c25b"
   integrity sha1-mGbfOVECEw449/mWvOtlRDIJwls=
 
-js-yaml@3.13.1, js-yaml@^3.12.0, js-yaml@^3.13.0, js-yaml@^3.13.1:
+js-yaml@3.13.1, js-yaml@^3.12.0, js-yaml@^3.12.1, js-yaml@^3.13.0, js-yaml@^3.13.1:
   version "3.13.1"
   resolved "https://registry.npm.taobao.org/js-yaml/download/js-yaml-3.13.1.tgz#aff151b30bfdfa8e49e05da22e7415e9dfa37847"
   integrity sha1-r/FRswv9+o5J4F2iLnQV6d+jeEc=
@@ -4359,6 +4407,15 @@ json-schema-ref-parser@^5.1.3:
     debug "^3.1.0"
     js-yaml "^3.12.0"
     ono "^4.0.6"
+
+json-schema-ref-parser@^6.0.3:
+  version "6.1.0"
+  resolved "https://registry.npm.taobao.org/json-schema-ref-parser/download/json-schema-ref-parser-6.1.0.tgz#30af34aeab5bee0431da805dac0eb21b574bf63d"
+  integrity sha1-MK80rqtb7gQx2oBdrA6yG1dL9j0=
+  dependencies:
+    call-me-maybe "^1.0.1"
+    js-yaml "^3.12.1"
+    ono "^4.0.11"
 
 json-schema-traverse@^0.4.1:
   version "0.4.1"
@@ -5255,6 +5312,11 @@ object-copy@^0.1.0:
     define-property "^0.2.5"
     kind-of "^3.0.3"
 
+object-is@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npm.taobao.org/object-is/download/object-is-1.0.1.tgz#0aa60ec9989a0b3ed795cf4d06f62cf1ad6539b6"
+  integrity sha1-CqYOyZiaCz7Xlc9NBvYs8a1lObY=
+
 object-keys@^1.0.0, object-keys@^1.0.11, object-keys@^1.0.12:
   version "1.1.1"
   resolved "https://registry.npm.taobao.org/object-keys/download/object-keys-1.1.1.tgz#1c47f272df277f3b1daf061677d9c82e2322c60e"
@@ -5276,6 +5338,16 @@ object.assign@4.1.0:
     function-bind "^1.1.1"
     has-symbols "^1.0.0"
     object-keys "^1.0.11"
+
+object.entries@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.npm.taobao.org/object.entries/download/object.entries-1.1.0.tgz#2024fc6d6ba246aee38bdb0ffd5cfbcf371b7519"
+  integrity sha1-ICT8bWuiRq7ji9sP/Vz7zzcbdRk=
+  dependencies:
+    define-properties "^1.1.3"
+    es-abstract "^1.12.0"
+    function-bind "^1.1.1"
+    has "^1.0.3"
 
 object.getownpropertydescriptors@^2.0.3:
   version "2.0.3"
@@ -5311,7 +5383,7 @@ only@~0.0.2:
   resolved "https://registry.npm.taobao.org/only/download/only-0.0.2.tgz#2afde84d03e50b9a8edc444e30610a70295edfb4"
   integrity sha1-Kv3oTQPlC5qO3EROMGEKcCle37Q=
 
-ono@^4.0.6:
+ono@^4.0.11, ono@^4.0.6:
   version "4.0.11"
   resolved "https://registry.npm.taobao.org/ono/download/ono-4.0.11.tgz#c7f4209b3e396e8a44ef43b9cedc7f5d791d221d"
   integrity sha1-x/Qgmz45bopE70O5ztx/XXkdIh0=
@@ -5326,6 +5398,11 @@ openapi-schema-validation@^0.4.2:
     jsonschema "1.2.4"
     jsonschema-draft4 "^1.0.0"
     swagger-schema-official "2.0.0-bab6bed"
+
+openapi3-ts@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.npm.taobao.org/openapi3-ts/download/openapi3-ts-1.2.0.tgz#b86b518b7d7b5589e5266024c96bdc723e255112"
+  integrity sha1-uGtRi317VYnlJmAkyWvccj4lURI=
 
 optimist@^0.6.1:
   version "0.6.1"
@@ -6730,7 +6807,7 @@ swagger-jsdoc@^3.2.9:
     js-yaml "3.13.1"
     swagger-parser "5.0.5"
 
-swagger-methods@^1.0.4:
+swagger-methods@^1.0.4, swagger-methods@^1.0.8:
   version "1.0.8"
   resolved "https://registry.npm.taobao.org/swagger-methods/download/swagger-methods-1.0.8.tgz#8baf37ee861d3c72ff7b2faad6d74c60b336e2ed"
   integrity sha1-i6837oYdPHL/ey+q1tdMYLM24u0=
@@ -6749,7 +6826,20 @@ swagger-parser@5.0.5:
     swagger-schema-official "2.0.0-bab6bed"
     z-schema "^3.23.0"
 
-swagger-schema-official@2.0.0-bab6bed:
+swagger-parser@^6.0.5:
+  version "6.0.5"
+  resolved "https://registry.npm.taobao.org/swagger-parser/download/swagger-parser-6.0.5.tgz#9475971c7b2c7b0402e1cdee35182fe78b90673b"
+  integrity sha1-lHWXHHssewQC4c3uNRgv54uQZzs=
+  dependencies:
+    call-me-maybe "^1.0.1"
+    json-schema-ref-parser "^6.0.3"
+    ono "^4.0.11"
+    openapi-schema-validation "^0.4.2"
+    swagger-methods "^1.0.8"
+    swagger-schema-official "2.0.0-bab6bed"
+    z-schema "^3.24.2"
+
+swagger-schema-official@2.0.0-bab6bed, swagger-schema-official@^2.0.0-bab6bed:
   version "2.0.0-bab6bed"
   resolved "https://registry.npm.taobao.org/swagger-schema-official/download/swagger-schema-official-2.0.0-bab6bed.tgz#70070468d6d2977ca5237b2e519ca7d06a2ea3fd"
   integrity sha1-cAcEaNbSl3ylI3suUZyn0Gouo/0=
@@ -7211,6 +7301,17 @@ util-deprecate@^1.0.1, util-deprecate@~1.0.1:
   resolved "https://registry.npm.taobao.org/util-deprecate/download/util-deprecate-1.0.2.tgz#450d4dc9fa70de732762fbd2d4a28981419a0ccf"
   integrity sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=
 
+util@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.npm.taobao.org/util/download/util-0.12.0.tgz#bb5e3d29ba2703c7add0ad337003be3ca477798a"
+  integrity sha1-u149KbonA8et0K0zcAO+PKR3eYo=
+  dependencies:
+    inherits "2.0.3"
+    is-arguments "^1.0.4"
+    is-generator-function "^1.0.7"
+    object.entries "^1.1.0"
+    safe-buffer "^5.1.2"
+
 utility@0.1.11:
   version "0.1.11"
   resolved "https://registry.npm.taobao.org/utility/download/utility-0.1.11.tgz#fde60cf9b4e4751947a0cf5d104ce29367226715"
@@ -7557,7 +7658,7 @@ ypkgfiles@^1.6.0:
     resolve-files "^1.0.0"
     yargs "^7.0.1"
 
-z-schema@^3.23.0:
+z-schema@^3.23.0, z-schema@^3.24.2:
   version "3.25.1"
   resolved "https://registry.npm.taobao.org/z-schema/download/z-schema-3.25.1.tgz#7e14663be2b96003d938a56f644fb8561643fb7e"
   integrity sha1-fhRmO+K5YAPZOKVvZE+4VhZD+34=
