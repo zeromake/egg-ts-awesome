@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@zeromake/egg-mock": "^3.23.1",
-    "@zeromake/egg-swagger": "^0.1.1",
+    "@zeromake/egg-swagger": "^0.1.3",
     "@zeromake/egg-typeorm": "^1.4.3",
     "egg": "^2.22.2",
     "egg-passport": "^2.0.1",
