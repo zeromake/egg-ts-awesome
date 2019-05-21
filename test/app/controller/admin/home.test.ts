@@ -2,7 +2,5 @@
 // import { app } from "egg-mock/bootstrap";
 
 describe("Test admin home", () => {
-    it("should GET admin /", async () => {
-
-    });
+  it("should GET admin /", async () => {});
 });

@@ -22,8 +22,7 @@
     "lint": "tslint --project . -c tslint.json",
     "clean": "ets clean",
     "typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js",
-    "sync": "npm run typeorm migration:run",
-    "docs": "npx ts-node ./scripts/doc.ts && npx swagger-jsdoc -d ./swagger-jsdoc.js -o ./app/public/docs/swagger.json"
+    "sync": "npm run typeorm migration:run"
   },
   "dependencies": {
     "@zeromake/egg-mock": "^3.23.1",
