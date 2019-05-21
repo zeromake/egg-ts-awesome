@@ -1,6 +1,15 @@
-# hackernews-async-ts
 
-[Hacker News](https://news.ycombinator.com/) showcase using typescript && egg
+[![build status][travis-image]][travis-url]
+[![Test coverage][codecov-image]][codecov-url]
+
+[travis-image]: https://travis-ci.com/zeromake/egg-ts-awesome.svg?branch=master
+[travis-url]: https://travis-ci.com/zeromake/egg-ts-awesome
+[codecov-image]: https://img.shields.io/codecov/c/github/zeromake/egg-ts-awesome.svg?style=flat-square
+[codecov-url]: https://codecov.io/github/zeromake/egg-ts-awesome?branch=master
+
+# egg-ts-awesome
+
+[egg](https://github.com/eggjs/egg) + [typeorm](https://github.com/typeorm/typeorm) + [swagger](https://swagger.io/)
 
 ## QuickStart
 
@@ -25,9 +34,17 @@ $ npm start
 
 - Use `npm run lint` to check code style
 - Use `npm test` to run unit test
-- se `npm run clean` to clean compiled js at development mode once
+- Use `npm run clean` to clean compiled js at development mode once
 
 ### Requirement
 
 - Node.js 8.x
 - Typescript 2.8+
+- typeorm 0.2.x
+
+### Feature
+
+- full use `typescript`.
+- fork [@forsigner/egg-typeorm](https://github.com/forsigner/egg-typeorm) to [@zeromake/egg-typeorm](https://github.com/zeromake/egg-typeorm) add more config.
+- fork [egg-mock](https://github.com/eggjs/egg-mock) to [@zeromake/egg-mock](https://github.com/zeromake/egg-mock) add supertest agent.
+- add [@zeromake/egg-swagger](https://github.com/zeromake/egg-swagger) egg swagger plugin.
