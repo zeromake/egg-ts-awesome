@@ -64,6 +64,12 @@ export default (appInfo: EggAppInfo) => {
       ],
     },
   };
+  config.view = {
+    mapping: {
+      '.njk': 'nunjucks',
+      '.nj': 'nunjucks',
+    },
+  };
 
   // the return config will combines to EggAppConfig
   return {

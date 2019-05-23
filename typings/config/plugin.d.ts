@@ -7,6 +7,7 @@ import 'egg-session';
 import 'egg-i18n';
 import 'egg-watcher';
 import 'egg-multipart';
+import 'egg-security';
 import 'egg-development';
 import 'egg-static';
 import 'egg-view';
@@ -16,6 +17,7 @@ import 'egg-passport';
 import 'egg-redis';
 import 'egg-session-redis';
 import '@zeromake/egg-swagger';
+import 'egg-view-nunjucks';
 import { EggPluginItem } from 'egg';
 declare module 'egg' {
   interface EggPlugin {
@@ -37,5 +39,6 @@ declare module 'egg' {
     redis?: EggPluginItem;
     sessionRedis?: EggPluginItem;
     swagger?: EggPluginItem;
+    nunjucks?: EggPluginItem;
   }
 }

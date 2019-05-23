@@ -15,7 +15,7 @@ const plugin: EggPlugin = {
     enable: true,
     package: "@zeromake/egg-typeorm",
   },
-  security: false,
+  security: true,
   session: true,
   passport: {
     enable: true,
@@ -34,10 +34,10 @@ const plugin: EggPlugin = {
     package: "@zeromake/egg-swagger",
   },
   // static: true,
-  // nunjucks: {
-  //   enable: true,
-  //   package: 'egg-view-nunjucks',
-  // },
+  nunjucks: {
+    enable: true,
+    package: 'egg-view-nunjucks',
+  },
 };
 
 export default plugin;

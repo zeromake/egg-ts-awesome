@@ -8,7 +8,6 @@ logs/
 .DS_Store
 .vscode
 *.swp
-*.js
 !.autod.conf.js
 !swagger-jsdoc.js
 
@@ -22,4 +21,4 @@ config/**/*.local.ts
 config/**/*.prod.ts
 *.log
 *.db
-app/public/docs
+app/public

@@ -2843,6 +2843,20 @@ egg-utils@^2.4.1:
     mkdirp "^0.5.1"
     utility "^1.13.1"
 
+egg-view-ejs@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.npm.taobao.org/egg-view-ejs/download/egg-view-ejs-2.0.0.tgz#996f38e61b497c92b449dbb1103141a13f32d65f"
+  integrity sha1-mW845htJfJK0SduxEDFBoT8y1l8=
+  dependencies:
+    ejs "^2.5.7"
+
+egg-view-nunjucks@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.npm.taobao.org/egg-view-nunjucks/download/egg-view-nunjucks-2.2.0.tgz#173a43d183c6373d13c577c5fec8a5c7284a372c"
+  integrity sha1-FzpD0YPGNz0TxXfF/silxyhKNyw=
+  dependencies:
+    nunjucks "^3.1.2"
+
 egg-view@^2.1.2:
   version "2.1.2"
   resolved "https://registry.npm.taobao.org/egg-view/download/egg-view-2.1.2.tgz#144698b23d1b187e1764e5edceae1819810d7a1f"
@@ -2905,6 +2919,11 @@ egg@^2.22.2:
     urllib "^2.33.0"
     utility "^1.15.0"
     ylru "^1.2.1"
+
+ejs@^2.5.7:
+  version "2.6.1"
+  resolved "https://registry.npm.taobao.org/ejs/download/ejs-2.6.1.tgz#498ec0d495655abc6f23cd61868d926464071aa0"
+  integrity sha1-SY7A1JVlWrxvI81hho2SZGQHGqA=
 
 electron-to-chromium@^1.3.47:
   version "1.3.134"
@@ -5252,7 +5271,7 @@ number-is-nan@^1.0.0:
   resolved "https://registry.npm.taobao.org/number-is-nan/download/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
-nunjucks@^3.1.3:
+nunjucks@^3.1.2, nunjucks@^3.1.3:
   version "3.2.0"
   resolved "https://registry.npm.taobao.org/nunjucks/download/nunjucks-3.2.0.tgz#53e95f43c9555e822e8950008a201b1002d49933"
   integrity sha1-U+lfQ8lVXoIuiVAAiiAbEALUmTM=
