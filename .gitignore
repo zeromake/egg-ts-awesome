@@ -22,3 +22,4 @@ config/**/*.prod.ts
 *.log
 *.db
 app/public
+app/view/index.njk
