@@ -11,7 +11,9 @@ describe("Test admin sessions", async () => {
   let agent: SuperTest<MockTest> = null as any;
   let ctx: Context = null as any;
   before(async () => {
-    agent = app.httpAgent();
+    agent = app.httpAgent({
+      csrf: true,
+    });
     ctx = app.mockContext();
 
     const user = {

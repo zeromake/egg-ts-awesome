@@ -1,12 +1,18 @@
 import * as assert from "assert";
 import { Context } from "egg";
 import { app } from "@zeromake/egg-mock/bootstrap";
+import { MockTest } from "@zeromake/egg-mock";
+import { SuperTest } from "supertest";
 
 describe("Test api sessions", async () => {
   let userObj: any = null;
   let ctx: Context = null as any;
+  let agent: SuperTest<MockTest> = null as any;
   before(async () => {
     ctx = app.mockContext();
+    agent = app.httpAgent({
+      csrf: true,
+    });
 
     const user = {
       username: "test",
@@ -22,15 +28,13 @@ describe("Test api sessions", async () => {
   });
 
   it("should GET api /", async () => {
-    const result = await app
-      .httpRequest()
+    const result = await agent
       .get("/api")
       .expect(401);
     assert(result.body.message === ctx.gettext("unAuth"));
   });
   it("should POST api /sessions", async () => {
-    const result = await app
-      .httpRequest()
+    const result = await agent
       .post("/api/sessions")
       .send({
         username: "test",

@@ -401,10 +401,10 @@
   resolved "https://registry.npm.taobao.org/@types/yargs/download/@types/yargs-12.0.12.tgz#45dd1d0638e8c8f153e87d296907659296873916"
   integrity sha1-Rd0dBjjoyPFT6H0paQdlkpaHORY=
 
-"@zeromake/egg-mock@^3.23.1":
-  version "3.23.1"
-  resolved "https://registry.npm.taobao.org/@zeromake/egg-mock/download/@zeromake/egg-mock-3.23.1.tgz#5d52e35ad69845ae3479bc0e1c2dfc139b05f6ea"
-  integrity sha1-XVLjWtaYRa40ebwOHC38E5sF9uo=
+"@zeromake/egg-mock@^3.24.2":
+  version "3.24.2"
+  resolved "https://registry.npm.taobao.org/@zeromake/egg-mock/download/@zeromake/egg-mock-3.24.2.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40zeromake%2Fegg-mock%2Fdownload%2F%40zeromake%2Fegg-mock-3.24.2.tgz#25965b1ee40e727285dfd7387a157658a5e57446"
+  integrity sha1-JZZbHuQOcnKF39c4ehV2WKXldEY=
   dependencies:
     "@types/power-assert" "^1.5.0"
     await-event "^2.1.0"
@@ -422,8 +422,8 @@
     merge-descriptors "^1.0.1"
     methods "^1.1.2"
     mm "^2.5.0"
+    mz-modules "^2.1.0"
     power-assert "^1.6.1"
-    rimraf "^2.6.3"
     supertest "^4.0.2"
     urllib "^2.33.3"
 
@@ -443,10 +443,10 @@
     swagger-ui-dist "^3.22.1"
     ylru "^1.2.1"
 
-"@zeromake/egg-typeorm@^1.4.3":
-  version "1.4.3"
-  resolved "https://registry.npm.taobao.org/@zeromake/egg-typeorm/download/@zeromake/egg-typeorm-1.4.3.tgz#804cf0ff097f51110b9a4720b5af28148c3b6bfd"
-  integrity sha1-gEzw/wl/URELmkcgta8oFIw7a/0=
+"@zeromake/egg-typeorm@^1.4.4":
+  version "1.4.4"
+  resolved "https://registry.npm.taobao.org/@zeromake/egg-typeorm/download/@zeromake/egg-typeorm-1.4.4.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2F%40zeromake%2Fegg-typeorm%2Fdownload%2F%40zeromake%2Fegg-typeorm-1.4.4.tgz#ce1906f1c8bcbe955dd37d153441eb7a73d2a5d7"
+  integrity sha1-zhkG8ci8vpVd030VNEHrenPSpdc=
   dependencies:
     chokidar "^3.0.0"
     fs-extra "^7.0.1"

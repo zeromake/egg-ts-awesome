@@ -71,6 +71,12 @@ export default (appInfo: EggAppInfo) => {
     },
   };
 
+  config.security = {
+    csrf: {
+      useSession: true,
+    },
+  };
+
   // the return config will combines to EggAppConfig
   return {
     ...config,
