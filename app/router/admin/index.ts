@@ -26,4 +26,8 @@ export default function(app: Application) {
       message: ctx.gettext("home", ctx.gettext("admin")),
     };
   });
+
+  rootRouter.get(['/admin', '/admin/*'], async (ctx: Context) => {
+    await ctx.render('admin.njk');
+  });
 }
