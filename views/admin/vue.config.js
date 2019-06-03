@@ -5,6 +5,12 @@ module.exports = {
   outputDir: '../../app/public/admin',
   indexPath: '../../view/admin.njk',
   devServer: {
-    proxy: 'http://127.0.0.1:7001',
+    proxy: {
+      '^/api/admin': {
+        target: 'http://127.0.0.1:7001',
+        ws: true,
+        changeOrigin: true
+      },
+    },
   }
 }
