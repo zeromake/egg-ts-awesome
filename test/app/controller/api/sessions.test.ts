@@ -10,9 +10,7 @@ describe("Test api sessions", async () => {
   let agent: SuperTest<MockTest> = null as any;
   before(async () => {
     ctx = app.mockContext();
-    agent = app.httpAgent({
-      csrf: true,
-    });
+    agent = app.httpAgent();
 
     const user = {
       username: "test",
