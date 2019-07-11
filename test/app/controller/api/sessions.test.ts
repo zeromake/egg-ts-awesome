@@ -1,4 +1,4 @@
-import * as assert from "assert";
+import * as assert from "power-assert";
 import { Context } from "egg";
 import { app } from "@zeromake/egg-mock/bootstrap";
 import { MockTest } from "@zeromake/egg-mock";

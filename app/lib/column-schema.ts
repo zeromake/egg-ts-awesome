@@ -1,4 +1,5 @@
 import {
+  BaseEntity,
   Entity,
   PrimaryGeneratedColumn,
   CreateDateColumn,
@@ -6,7 +7,7 @@ import {
 } from "typeorm";
 
 @Entity()
-export abstract class BaseColumn {
+export abstract class BaseColumn extends BaseEntity {
   @PrimaryGeneratedColumn()
   public readonly id: number;
 

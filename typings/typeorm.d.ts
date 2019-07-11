@@ -7,8 +7,8 @@ declare module 'egg' {
   interface Context {
     connection: Connection
     entity: {
-      Manager: ObjectType<Manager>
-      User: ObjectType<User>
+      Manager: typeof Manager
+      User: typeof User
     }
     repo: {
       Manager: Repository<Manager>
